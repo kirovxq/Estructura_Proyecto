@@ -3,9 +3,8 @@
 <b>Flujo de trabajo:</b>
 
 En consola usar el comando:
-$ git clone https://github.com/kirovxq/Estructura_Proyecto.git
-
-$ cd Estructura_Proyecto
+<pre>$ git clone https://github.com/kirovxq/Estructura_Proyecto.git
+$ cd Estructura_Proyecto</pre>
 
 Pueden crear sus ramas directamente con:
 
