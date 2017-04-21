@@ -2,22 +2,18 @@
 
 <b>Flujo de trabajo:</b>
 
-En consola usar el comando:
+Para descargar el archivo, en consola usar el comando:
 <pre>$ git clone https://github.com/kirovxq/Estructura_Proyecto.git
 $ cd Estructura_Proyecto</pre>
 
 Pueden crear sus ramas directamente con:
-
-$ git branch [nombre de rama]
-
-$ git checkout [nombre de rama]
+<pre>$ git branch [nombre de rama]
+$ git checkout [nombre de rama]</pre>
 
 Cuando terminen de modificar, guarden sus cambios y despues usen los siguientes comandos:
-
-$ git add .
-
-$ git commit -m "titulo de las modificaciones"
-
-$ git pull origin master
-
-$ git push origin [nombre de rama]
+<pre>$ git add .
+$ git commit -m "titulo de las modificaciones"</pre>
+*No olviden actualizar a la última versión de los archivos
+<pre>$ git pull origin master</pre>
+Las modificaciones se suben al repositorio remoto (el de github) con el siguiente comando:
+<pre>$ git push origin [nombre de rama]</pre>
