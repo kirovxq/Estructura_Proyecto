@@ -3,6 +3,7 @@
 void main(){
 	card cards[52];
 	AddValueCards(cards);
+	Randomize(cards);
 	PrintCards(cards);
 }
 
