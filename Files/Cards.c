@@ -50,66 +50,16 @@ void Randomize(card cards[52]) {
     }
 }
 
-void FreeCard(card Cards[52], int key){
-	Cards[key].next=-1;
-	Cards[key].prev=-1;
+void FreeCard(card cards[52], int key){
+	cards[key].next=-1;
+	cards[key].prev=-1;
 }
 
-void ShowCard(Card c){
-	printf("------\n");
+void ShowCard(card c){
+	printf("---------\n");
 	printf("|%d\t|\n",c.number);
-	printf("| %d |\n",);
-	printf("|    |\n");
-	printf("------\n");
+	printf("|\t|\n");
+	printf("|\t|\n");
+	printf("|\t|\n");
+	printf("---------\n");
 }
-
-void PopStack(card Cards[52], stack *s){
-	int removed=0;
-	int prev=-1;
-	int act=s->end;
-	while(act!=-1 && removed==0){
-		if(x==Cards[act].info){
-			if(prev==-1)
-				s->end=Cards[act].next;
-			else
-				Cards[prev].next=Cards[act].next;
-			FreeCard(Cards,act,libre);
-			removed=1;
-		}else{
-			prev=act;
-			act=Cards[act].next;
-		}
-	}
-}
-
-void PushStack(card Cards[52], stack *s, int key){
-	int act=s->end;
-	int prev=-1;
-	int added=0;
-	if(*libre!=-1){
-		Cards[*libre].next=-1;
-		if(Cards[act].info==-1){
-			*inicio=*libre;
-			Cards[*inicio].next=-1;
-		}
-		else{
-			while(added==0){
-				if(act==-1 || x<Cards[act].info){
-					if(prev==-1)*inicio=*libre;
-					else Cards[prev].next=*libre;
-					Cards[*libre].next=act;
-					added=1;
-				}else{
-					prev=act;
-					act=Cards[act].next;
-				}
-			}
-		}Cards[*libre].info=x;
-		*libre=asignarLibre(Cards,max);
-	}else cout<<"Cards Full!"<<endl;
-}
-
-
-
-
-

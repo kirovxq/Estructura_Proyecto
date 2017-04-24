@@ -11,9 +11,5 @@ void AddValueCards(card cards[52]);
 void PrintCards(card cards[52]);
 void Randomize(card cards[52]);
 void Swap(card *A, card *B);
-void FreeCard(card Cards[52], int key);
-void ShowCard(Card c);
-typedef struct stack{
-	int end;
-	int top;
-}
+void FreeCard(card cards[52], int key);
+void ShowCard(card c);
