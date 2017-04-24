@@ -9,3 +9,5 @@ typedef struct card{
 
 void AddValueCards(card cards[52]);
 void PrintCards(card cards[52]);
+void Randomize(card cards[52]);
+void Swap(card *A, card *B);
