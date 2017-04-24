@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "Stacks.h"
+#include "Decks.h"
 
-void InitStacks(int n, stack *s){
+void InitDecks(int n, deck *s){
 	int i;
 	for(i = 0; i < n; i++){
 		s[i].end=-1;
@@ -9,7 +9,7 @@ void InitStacks(int n, stack *s){
 	}
 }
 
-void PopStack(card cards[52], stack *s){
+void PopDeck(card cards[52], deck *s){
 	int act=s->top;
 	int prev=cards[act].prev;
 	if(act==-1)
@@ -24,7 +24,7 @@ void PopStack(card cards[52], stack *s){
 	}
 }
 
-void PushStack(card cards[52], stack *s, int key){
+void PushDeck(card cards[52], deck *s, int key){
 	int act=s->top;
 	cards[key].next=-1;
 	if(act==-1)
@@ -35,7 +35,7 @@ void PushStack(card cards[52], stack *s, int key){
 	s->top=key;
 }
 
-void PrintStack(card cards[52], stack s){
+void PrintDeck(card cards[52], deck s){
 	printf("Number\tColor\tState\n");
 	int act = s.top;
 	for(; act !=-1; act=cards[act].prev){

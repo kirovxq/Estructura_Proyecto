@@ -2,28 +2,25 @@
 #include "Cards.h"
 
 void AddValueCards(card cards[52]){
-    int i, j, k = 0;//, typCont = 0;
-    for(j = 0; j < 4; j++){
-        if(i == 13)
-            i = 1;
-        for(i = 1; i <= 13; i++){
-            switch(j){
-                case 0:
-                case 2: cards[k].color = 'B';
-                        break;
-                case 1:
-                case 3: cards[k].color = 'R';
-                        break;
-                default: printf("Wtf this just happened?\n");
-                //no mames we!
-            }
-            cards[k].number = i;
-            cards[k].state = 'N';
-            cards[k].next=-1;
-            cards[k].prev=-1;
-            k++;
-        }
-    }
+	int i, j, k = 0;//, typCont = 0;
+	for(j = 0; j < 4; j++){
+		if(i == 13)
+		i = 1;
+		for(i = 1; i <= 13; i++){
+			switch(j%2){
+			case 0: cards[k].color = 'R';break;
+			case 1: cards[k].color = 'B';break;
+			default: printf("Wtf this just happened?\n");
+			 //no mames we!
+		}
+		cards[k].number = i;
+		cards[k].state = 'N';
+		cards[k].typ =j;
+		cards[k].next=-1;
+		cards[k].prev=-1;
+		k++;
+		}
+	}
 }
 void PrintCards(card cards[52]){
 	printf("Number\tColor\tState\n");
@@ -58,8 +55,8 @@ void FreeCard(card cards[52], int key){
 void ShowCard(card c){
 	printf("---------\n");
 	printf("|%d\t|\n",c.number);
-	printf("|\t|\n");
-	printf("|\t|\n");
+	printf("|%d\t|\n",c.typ);
+	printf("|%c\t|\n",c.color);
 	printf("|\t|\n");
 	printf("---------\n");
 }
