@@ -55,7 +55,7 @@ void FreeCard(card Cards[52], int key){
 	Cards[key].prev=-1;
 }
 
-void ShowCard(Card c){
+void Layer(Card c){
 	printf("------\n");
 	printf("|%d\t|\n",c.number);
 	printf("| %d |\n",);

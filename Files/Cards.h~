@@ -12,7 +12,7 @@ void PrintCards(card cards[52]);
 void Randomize(card cards[52]);
 void Swap(card *A, card *B);
 void FreeCard(card Cards[52], int key);
-void ShowCard(Card c);
+void Layer(Card c);
 typedef struct stack{
 	int end;
 	int top;
