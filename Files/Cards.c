@@ -33,3 +33,18 @@ void PrintCards(card cards[52]){
 	}
 }
 
+void Swap(card *A, card *B) {
+    card temp = *A;
+    *A = *B;
+    *B = temp;
+}
+
+void Randomize(card cards[52]) {
+    srand(time(NULL));
+    int i;
+    for(i = 51; i > 0; i--) {
+        int j = rand() % (i+1);
+        Swap(&cards[i], &cards[j]);
+    }
+}
+
