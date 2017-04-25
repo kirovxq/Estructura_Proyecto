@@ -7,5 +7,5 @@ typedef struct deck{
 
 void InitDecks(int n, deck *s);
 void PushDeck(card cards[52], deck *s, int key);
-void PopDeck(card cards[52], deck *s);
+int PopDeck(card cards[52], deck *s);
 void PrintDeck(card cards[52], deck s);

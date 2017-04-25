@@ -22,6 +22,7 @@ void AddValueCards(card cards[52]){
 		}
 	}
 }
+
 void PrintCards(card cards[52]){
 	printf("Number\tColor\tState\n");
 	int n = 0;
@@ -52,10 +53,30 @@ void FreeCard(card cards[52], int key){
 	cards[key].prev=-1;
 }
 
+#if defined(_WIN32) || defined(__MSDOS__)
+   #define SPADE   "\x06"
+   #define CLUB    "\x05"
+   #define HEART   "\x03"
+   #define DIAMOND "\x04"
+#else
+   #define SPADE   "\xE2\x99\xA0"
+   #define CLUB    "\xE2\x99\xA3"
+   #define HEART   "\xE2\x99\xA5"
+   #define DIAMOND "\xE2\x99\xA6"
+#endif
+
 void ShowCard(card c){
+	char *s;
+	switch(c.typ){
+		case 0:s = HEART;break;
+		case 1:s = SPADE;break;
+		case 2:s = DIAMOND;break;
+		case 3:s = CLUB;break;
+		default:s = "?";//"Alto ahí rufian!"
+	}
 	printf("---------\n");
 	printf("|%d\t|\n",c.number);
-	printf("|%d\t|\n",c.typ);
+	printf("|%s\t|\n",s);
 	printf("|%c\t|\n",c.color);
 	printf("|\t|\n");
 	printf("---------\n");

@@ -9,11 +9,12 @@ void InitDecks(int n, deck *s){
 	}
 }
 
-void PopDeck(card cards[52], deck *s){
+int PopDeck(card cards[52], deck *s){
 	int act=s->top;
 	int prev=cards[act].prev;
 	if(act==-1)
 		printf("Empty Stack!");
+		return -1;
 	else{
 		s->top=prev;
 		if(prev!=-1)
@@ -21,6 +22,7 @@ void PopDeck(card cards[52], deck *s){
 		else
 			printf("Stack is now empty!");
 		cards[act].prev=-1;
+		return act;
 	}
 }
 

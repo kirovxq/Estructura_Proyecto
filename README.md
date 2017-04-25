@@ -10,9 +10,10 @@ Pueden crear sus ramas directamente con:
 <pre>$ git branch [nombre de rama]
 $ git checkout [nombre de rama]</pre>
 
-La compilación de los archivos dentro de Files se hace con
+La compilación se debe hacer en la carpeta Files de la siguiente forma:
 
-<pre>$ gcc *.h *.c</pre>
+<pre>$ cd Files
+$ gcc *.h *.c</pre>
 
 Cuando terminen de modificar, guarden sus cambios y despues usen los siguientes comandos:
 <pre>$ git add .
