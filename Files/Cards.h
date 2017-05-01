@@ -3,8 +3,6 @@ typedef struct card{
 	int number;
 	char color; // B = Black, R = Red
 	char state; // V = Visible, N = Not visible
-//	int next;
-//	int prev;
 }card;
 
 void AddValueCards(card cards[52]);

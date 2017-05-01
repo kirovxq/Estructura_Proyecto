@@ -16,8 +16,6 @@ void AddValueCards(card cards[52]){
 		cards[k].number = i;
 		cards[k].state = 'N';
 		cards[k].typ =j;
-//		cards[k].next=-1;
-//		cards[k].prev=-1;
 		k++;
 		}
 	}
@@ -47,12 +45,7 @@ void Randomize(card cards[52]) {
         Swap(&cards[i], &cards[j]);
     }
 }
-/*
-void FreeCard(card cards[52], int key){
-	cards[key].next=-1;
-	cards[key].prev=-1;
-}
-*/
+
 #if defined(_WIN32) || defined(__MSDOS__)
    #define SPADE   "\x06"
    #define CLUB    "\x05"
