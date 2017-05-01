@@ -37,13 +37,13 @@ void Swap(card *A, card *B) {
     *B = temp;
 }
 
-void Randomize(card cards[52]) {
-    srand(time(NULL));
-    int i;
-    for(i = 51; i > 0; i--) {
-        int j = rand() % (i+1);
-        Swap(&cards[i], &cards[j]);
-    }
+void Randomize(card *cards, int base, int top) {
+	srand(time(NULL));
+	int i;
+	for(i = top; i > base; i--) {
+		int j = base + 1 + rand() % (i-base);
+		Swap(&cards[i], &cards[j]);
+	}
 }
 
 #if defined(_WIN32) || defined(__MSDOS__)
