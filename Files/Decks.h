@@ -6,8 +6,6 @@ typedef struct deck{
 }deck;
 
 void InitDecks(int *base, int *top);
-void GoRight(card *vector, int *base, int *top, int deck);
-void GoLeft(card *vector, int *base, int *top, int deck);
-int PopDeck(card *vector,int base, int *top);
+int PopDeck(int *base, int *top, int deck);
 void PushDeck(card *vector,int *base,int *top,int deck,card c);
 void PrintDeck(card *vector,int base, int top);
