@@ -5,23 +5,24 @@ void main(){
 	card cards[52];
 	AddValueCards(cards);
 	Randomize(cards);
-	deck decks[13];
-	InitDecks(13, decks);
+	int base[13],top[13];
+	InitDecks(base,top);
+	card vector[60];
 	int i,cont=0,k=0;
 	for(i = 0; i < 28; i++){
 		if(k==7){
 			cont++;
 			k=cont;
 		}
-		PushDeck(cards, &decks[k], i);
+		PushDeck(vector,base,top,k,cards[i]);
 		k++;
 	}
 	for(i = 28; i < 52; i++)//the rest of the cards
-		PushDeck(cards, &decks[7], i);
+		PushDeck(vector,base,top,7,cards[i]);
 	//PrintCards(cards);
 	for(i = 0; i < 7; i++){
-		cards[decks[i].top].state='V';
-		ShowCard(cards[decks[i].top]);
+		vector[top[i]].state='V';
+		ShowCard(vector[top[i]]);
 		//PrintDeck(cards, decks[i]);
 	}
 }
